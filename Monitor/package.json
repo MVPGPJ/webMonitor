@@ -1,0 +1,22 @@
+{
+    "name": "monitor",
+    "version": "1.0.0",
+    "description": "前端监控探针",
+    "main": "index.js",
+    "scripts": {
+        "build": "node webpack.config.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "gongpengji-TeeMo"
+    },
+    "author": "TeeMo",
+    "license": "ISC",
+    "devDependencies": {},
+    "dependencies": {
+        "typescript": "^3.7.2",
+        "uglifyjs-webpack-plugin": "^2.2.0",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
+    }
+}

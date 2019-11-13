@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <script src="./index.js"></script> -->
+    <script>
+        (function (window) {
+            window.gongpegji = {
+                wm_upload: function (url, type, index, description) {
+                    var createTime = new Date().toString();
+                    var logParams = {
+                        createTime: encodeURIComponent(createTime),
+                        happenTime: new Date().getTime(),
+                        uploadType: 'WM_UPLOAD',
+                        simpleUrl: encodeURIComponent(encodeURIComponent(url)),
+                        webMonitorId: WEB_MONITOR_ID,
+                        recordType: type,
+                        recordIndex: index,
+                        description: description
+                    };
+                    var http_api = HTTP_UPLOAD_RECORD_DATA;
+                    var recordDataXmlHttp = window.XMLHttpRequest ? new XMLHttpRequest() :
+                        new ActiveXObject('Microsoft.XMLHTTP')
+                    recordDataXmlHttp.open('POST', http_api, true);
+                    recordDataXmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    recordDataXmlHttp.send('data=' + JSON.stringify([logParams]));
+                }
+            }
+            console.log(this)
+        })(window)
+    </script>
+</body>
+
+</html>
